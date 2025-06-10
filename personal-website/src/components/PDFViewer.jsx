@@ -9,7 +9,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 function PDFViewer() {
   const [numPages, setNumPages] = useState(null); //keep track of the number of pages in the pdf, provide a method to update number of pages
 
-  const [width, setWidth] = useState(1000);
+  const [width, setWidth] = useState(1200);
 
   //update the state to hold the number of pages in pdf
   const onDocumentLoadSuccess = ({ numPages }) => {
