@@ -36,7 +36,7 @@ function Sidebar() {
         style={{
           width: sidebarWidth,
           height: "100vh",
-          background: "#333",
+          background: "#382240",
           color: "#fff",
           transition: "width 0.3s",
           overflow: "hidden",
@@ -82,7 +82,7 @@ function Sidebar() {
               onClick={() => changeProject(1)}
               style={{ ...navButtonStyle, width: isOpen ? "180px" : "40px" }}
             >
-              {isOpen ? "Resume" : <FaUser />}
+              {isOpen ? "Resume/CV" : <FaUser />}
             </button>
           </li>
         </ul>
