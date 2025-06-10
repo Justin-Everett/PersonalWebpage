@@ -1,12 +1,34 @@
 import { useState } from "react";
+import { FaHome, FaUser } from "react-icons/fa";
 import PDFViewer from "./PDFViewer";
+import App from "../App";
 
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const sidebarWidth = isOpen ? 200 : 80;
+  const sidebarWidth = isOpen ? 250 : 60;
 
   const toggleSidebar = () => setIsOpen(!isOpen);
+
+  const [project, setProject] = useState(0);
+
+  const changeProject = (newProject) => setProject(newProject);
+
+  const navButtonStyle = {
+    marginBottom: "10px",
+    background: "none",
+    border: "none",
+    color: "#ccc",
+    cursor: "pointer",
+    fontSize: "18px",
+    justifyContent: "center",
+    transition: "width 0.3s",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textAlign: "center",
+    paddingBottom: "5px",
+    paddingTop: "5px",
+  };
 
   return (
     <div style={{ display: "flex" }}>
@@ -27,26 +49,43 @@ function Sidebar() {
           justifyContent: "center",
         }}
       >
-        <button
-          onClick={toggleSidebar}
+        <ul
           style={{
-            marginBottom: "10px",
-            background: "none",
-            border: "none",
-            color: "#fff",
-            cursor: "pointer",
-            fontSize: "18px",
-            justifyContent: "center",
-            width: isOpen ? "180px" : "40px",
-            transition: "width 0.3s",
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            paddingRight: "35px",
+            listStyleType: "none",
+            margin: 0,
+            paddingLeft: 0,
+            paddingRight: 0,
           }}
         >
-          {isOpen ? "←" : "→"}
-        </button>
-        {isOpen && <div></div>}
+          <li>
+            <button
+              onClick={toggleSidebar}
+              style={{
+                ...navButtonStyle,
+                marginBottom: "40px",
+                width: isOpen ? "180px" : "40px",
+              }}
+            >
+              {isOpen ? "←" : "→"}
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => changeProject(0)}
+              style={{ ...navButtonStyle, width: isOpen ? "180px" : "40px" }}
+            >
+              {isOpen ? "Home" : <FaHome />}
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => changeProject(1)}
+              style={{ ...navButtonStyle, width: isOpen ? "180px" : "40px" }}
+            >
+              {isOpen ? "Resume" : <FaUser />}
+            </button>
+          </li>
+        </ul>
       </div>
       <div
         style={{
@@ -61,9 +100,7 @@ function Sidebar() {
           scrollPaddingBottom: "20px",
         }}
       >
-        <div>
-          <PDFViewer />
-        </div>
+        <div>{project === 0 ? <App /> : <PDFViewer />}</div>
       </div>
     </div>
   );
