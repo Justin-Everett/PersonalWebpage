@@ -26,7 +26,7 @@ function PDFViewer() {
   //return pdf component
   return (
     <Document
-      file="https://justin-everett.github.io/PersonalWebpage/CV.pdf"
+      file={import.meta.env.BASE_URL + "resume.pdf"}
       onLoadSuccess={onDocumentLoadSuccess}
     >
       {numPages &&
