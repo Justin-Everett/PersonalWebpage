@@ -25,7 +25,10 @@ function PDFViewer() {
 
   //return pdf component
   return (
-    <Document file="/CV.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+    <Document
+      file="import.meta.env.BASE_URL + CV.pdf"
+      onLoadSuccess={onDocumentLoadSuccess}
+    >
       {numPages &&
         Array.from(new Array(numPages), (el, index) => (
           <div key={`page_container_${index}`}>
