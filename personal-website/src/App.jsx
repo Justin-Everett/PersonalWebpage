@@ -1,5 +1,4 @@
 import DaysUntil from "./components/DaysUntil";
-import YearsElapsed from "./components/YearsElapsed";
 import "./App.css";
 
 function App() {
@@ -22,7 +21,7 @@ function App() {
           <img
             src={"./LinkedInProfile.jpeg"}
             alt="Me"
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%", height: "100%", borderRadius: "10%" }}
           />
         </a>
       </div>
@@ -31,7 +30,7 @@ function App() {
           textAlign: "center",
         }}
       >
-        Justin Everett, <YearsElapsed fromDateString="2004-09-24" />
+        Justin Everett
       </h1>
       <div className="card">
         <div>
