@@ -16,7 +16,7 @@ function PDFViewer() {
     );
 
   //adjust width of pdf based on which device user is on
-  const width = isMobile ? window.innerWidth : window.innerWidth * 0.4;
+  const width = isMobile ? window.innerWidth * 0.75 : window.innerWidth * 0.5;
 
   //update the state to hold the number of pages in pdf
   const onDocumentLoadSuccess = ({ numPages }) => {

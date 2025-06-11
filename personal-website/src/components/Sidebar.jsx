@@ -6,7 +6,14 @@ import App from "../App";
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const sidebarWidth = isOpen ? 250 : 60;
+  var sidebarWidth = isOpen ? 250 : 60;
+
+  const isMobile =
+    /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+  sidebarWidth = isMobile ? sidebarWidth * 0.8 : sidebarWidth;
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
