@@ -9,7 +9,14 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 function PDFViewer() {
   const [numPages, setNumPages] = useState(null); //keep track of the number of pages in the pdf, provide a method to update number of pages
 
-  const [width, setWidth] = useState(1200);
+  //check if user is on a mobile device
+  const isMobile =
+    /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+  //adjust width of pdf based on which device user is on
+  const width = isMobile ? window.innerWidth : window.innerWidth * 0.4;
 
   //update the state to hold the number of pages in pdf
   const onDocumentLoadSuccess = ({ numPages }) => {

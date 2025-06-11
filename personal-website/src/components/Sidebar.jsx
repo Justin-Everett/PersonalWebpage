@@ -35,7 +35,7 @@ function Sidebar() {
       <div
         style={{
           width: sidebarWidth,
-          height: "100vh",
+          height: "100%",
           background: "#382240",
           color: "#fff",
           transition: "width 0.3s",
