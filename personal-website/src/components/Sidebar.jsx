@@ -78,7 +78,12 @@ function Sidebar() {
           </li>
           <li>
             <button
-              onClick={() => changeProject(0)}
+              onClick={() => {
+                changeProject(0);
+                if (isOpen) {
+                  toggleSidebar();
+                }
+              }}
               style={{ ...navButtonStyle, width: isOpen ? "180px" : "40px" }}
             >
               {isOpen ? "Home" : <FaHome />}
@@ -86,7 +91,12 @@ function Sidebar() {
           </li>
           <li>
             <button
-              onClick={() => changeProject(1)}
+              onClick={() => {
+                changeProject(1);
+                if (isOpen) {
+                  toggleSidebar();
+                }
+              }}
               style={{ ...navButtonStyle, width: isOpen ? "180px" : "40px" }}
             >
               {isOpen ? "Resume/CV" : <FaUser />}
