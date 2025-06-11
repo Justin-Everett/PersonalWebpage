@@ -2,7 +2,51 @@
   "hash": "f5208293",
   "configHash": "d0d9320c",
   "lockfileHash": "7a0b5b34",
-  "browserHash": "2af3cb44",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "4e470e0f",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "8dcc2b94",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "e69113cf",
+      "needsInterop": true
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "2e06555f",
+      "needsInterop": false
+    },
+    "react-pdf": {
+      "src": "../../node_modules/react-pdf/dist/esm/index.js",
+      "file": "react-pdf.js",
+      "fileHash": "a9bc091e",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-Z4L4S4OG": {
+      "file": "chunk-Z4L4S4OG.js"
+    },
+    "fs-OZYARV2F": {
+      "file": "fs-OZYARV2F.js"
+    },
+    "http-JOV4RC4V": {
+      "file": "http-JOV4RC4V.js"
+    },
+    "https-XRUYGCQX": {
+      "file": "https-XRUYGCQX.js"
+    },
+    "url-YR7V36UO": {
+      "file": "url-YR7V36UO.js"
+    },
+    "chunk-WOOG5QLI": {
+      "file": "chunk-WOOG5QLI.js"
+    }
+  }
 }
