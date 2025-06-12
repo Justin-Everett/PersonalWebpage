@@ -6,7 +6,7 @@ function Layout() {
   return (
     <div style={{ display: "flex" }}>
       <Sidebar />
-      <div style={{ flexGrow: 1, padding: "20px", marginRight: "60px" }}>
+      <div style={{ flexGrow: 1, padding: "20px" }}>
         <Outlet />
       </div>
     </div>

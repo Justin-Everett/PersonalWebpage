@@ -37,6 +37,7 @@ function Sidebar() {
     textAlign: "center",
     paddingBottom: "5px",
     paddingTop: "5px",
+    boxSizing: "border-box",
   };
 
   return (
@@ -64,6 +65,7 @@ function Sidebar() {
             margin: 0,
             paddingLeft: 0,
             paddingRight: 0,
+            boxSizing: "border-box",
           }}
         >
           <li>
@@ -72,7 +74,10 @@ function Sidebar() {
               style={{
                 ...navButtonStyle,
                 marginBottom: "40px",
-                width: isOpen ? "180px" : "40px",
+                width: isOpen ? "180px" : "100%",
+                maxWidth: "100%",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
               }}
             >
               {isOpen ? "←" : "→"}
@@ -86,7 +91,10 @@ function Sidebar() {
               }}
               style={{
                 ...navButtonStyle,
-                width: isOpen ? "180px" : "40px",
+                width: isOpen ? "180px" : "100%",
+                maxWidth: "100%",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
                 fontWeight: location.pathname === "/" ? "bold" : "normal",
               }}
             >
@@ -103,7 +111,10 @@ function Sidebar() {
               }}
               style={{
                 ...navButtonStyle,
-                width: isOpen ? "180px" : "40px",
+                width: isOpen ? "180px" : "100%",
+                maxWidth: "100%",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
                 fontWeight: location.pathname === "/resume" ? "bold" : "normal",
               }}
             >
@@ -115,7 +126,7 @@ function Sidebar() {
       <div
         style={{
           padding: "20px",
-          marginLeft: sidebarWidth,
+          marginLeft: isOpen ? sidebarWidth / 1.2 : 0,
           transition: "margin-left 0.3s",
           display: "flex",
           flexGrow: 1,
