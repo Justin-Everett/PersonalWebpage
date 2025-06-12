@@ -1,58 +1,20 @@
-import DaysUntil from "./components/DaysUntil";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Resume from "./pages/Resume";
 import "./App.css";
 
-function App() {
+//make routing for page navigation
+function App({ basename }) {
   return (
-    <div
-      style={{
-        marginTop: "40px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <a
-          href="https://www.linkedin.com/in/justin-everett-6b629a253/"
-          target="_blank"
-        >
-          <img
-            src={"./LinkedInProfile.jpeg"}
-            alt="Me"
-            style={{ width: "100%", height: "100%", borderRadius: "10%" }}
-          />
-        </a>
-      </div>
-      <h1
-        style={{
-          textAlign: "center",
-        }}
-      >
-        Justin Everett
-      </h1>
-      <div className="card">
-        <div>
-          <DaysUntil targetDateString="2025-07-31" />
-        </div>
-        <p
-          style={{
-            textAlign: "center",
-          }}
-        >
-          <code>Use the sidebar to the left to navigate</code>
-        </p>
-      </div>
-      <p
-        className="read-the-docs"
-        style={{
-          textAlign: "center",
-        }}
-      >
-        Click on the image of me to visit my LinkedIn profile!
-      </p>
-    </div>
+    <Router basename={basename}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="resume" element={<Resume />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

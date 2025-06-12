@@ -1,7 +1,7 @@
 import { Document, Page, pdfjs } from "react-pdf";
+import { useState } from "react";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import { useState } from "react";
 
 //explicitly tell react where to find worker script
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
@@ -32,23 +32,30 @@ function PDFViewer() {
 
   //return pdf component
   return (
-    <Document
-      file={import.meta.env.BASE_URL + "CV.pdf"}
-      onLoadSuccess={onDocumentLoadSuccess}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+      }}
     >
-      {numPages &&
-        Array.from(new Array(numPages), (el, index) => (
-          <div key={`page_container_${index}`}>
-            <Page
-              key={`page_${index + 1}`}
-              pageNumber={index + 1}
-              width={width}
-              renderTextLayer={true}
-            />
-            {index < numPages - 1 && <hr style={pageBreakStyle} />}
-          </div>
-        ))}
-    </Document>
+      <Document
+        file={import.meta.env.BASE_URL + "CV.pdf"}
+        onLoadSuccess={onDocumentLoadSuccess}
+      >
+        {numPages &&
+          Array.from(new Array(numPages), (el, index) => (
+            <div key={`page_container_${index}`}>
+              <Page
+                key={`page_${index + 1}`}
+                pageNumber={index + 1}
+                width={width}
+                renderTextLayer={true}
+              />
+              {index < numPages - 1 && <hr style={pageBreakStyle} />}
+            </div>
+          ))}
+      </Document>
+    </div>
   );
 }
 

@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { FaHome, FaUser } from "react-icons/fa";
-import PDFViewer from "./PDFViewer";
-import App from "../App";
+import { useNavigate, useLocation } from "react-router-dom";
 
+//collapsible sidebar component to handle intra-website navigation
 function Sidebar() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [isOpen, setIsOpen] = useState(false);
 
+  //adjust width of sidebar based on whether it is open or closed
   var sidebarWidth = isOpen ? 250 : 60;
 
+  //check if user is on a mobile device, then adjust sidebar width accordingly
   const isMobile =
     /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
@@ -17,10 +22,7 @@ function Sidebar() {
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
-  const [project, setProject] = useState(0);
-
-  const changeProject = (newProject) => setProject(newProject);
-
+  //styling for navigation buttons
   const navButtonStyle = {
     marginBottom: "10px",
     background: "none",
@@ -79,12 +81,14 @@ function Sidebar() {
           <li>
             <button
               onClick={() => {
-                changeProject(0);
-                if (isOpen) {
-                  toggleSidebar();
-                }
+                navigate("/");
+                if (isOpen) toggleSidebar();
               }}
-              style={{ ...navButtonStyle, width: isOpen ? "180px" : "40px" }}
+              style={{
+                ...navButtonStyle,
+                width: isOpen ? "180px" : "40px",
+                fontWeight: location.pathname === "/" ? "bold" : "normal",
+              }}
             >
               {isOpen ? "Home" : <FaHome />}
             </button>
@@ -92,12 +96,16 @@ function Sidebar() {
           <li>
             <button
               onClick={() => {
-                changeProject(1);
+                navigate("/resume");
                 if (isOpen) {
                   toggleSidebar();
                 }
               }}
-              style={{ ...navButtonStyle, width: isOpen ? "180px" : "40px" }}
+              style={{
+                ...navButtonStyle,
+                width: isOpen ? "180px" : "40px",
+                fontWeight: location.pathname === "/resume" ? "bold" : "normal",
+              }}
             >
               {isOpen ? "Resume/CV" : <FaUser />}
             </button>
@@ -116,9 +124,7 @@ function Sidebar() {
           boxSizing: "border-box",
           scrollPaddingBottom: "20px",
         }}
-      >
-        <div>{project === 0 ? <App /> : <PDFViewer />}</div>
-      </div>
+      ></div>
     </div>
   );
 }

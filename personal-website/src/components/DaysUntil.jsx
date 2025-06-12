@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
+//calculate the number of days from today until a target date in the future
 function DaysUntil({ targetDateString }) {
   const [daysLeft, setDaysLeft] = useState(null);
 
@@ -7,10 +8,10 @@ function DaysUntil({ targetDateString }) {
     const today = new Date();
     const targetDate = new Date(targetDateString);
 
-    // Calculate the difference in milliseconds
+    //get difference in system time between the two dates
     const timeDiff = targetDate.getTime() - today.getTime();
 
-    // Convert to days (1 day = 1000ms * 60s * 60min * 24hr)
+    //convert system time to days
     const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 
     setDaysLeft(days);
@@ -31,7 +32,13 @@ function DaysUntil({ targetDateString }) {
           {daysLeft} day{daysLeft !== 1 ? "s" : ""} until graduation!
         </p>
       ) : (
-        <p>The date has passed or is today!</p>
+        <p
+          style={{
+            fontWeight: "bold",
+          }}
+        >
+          I have officially graduated!
+        </p>
       )}
     </div>
   );
