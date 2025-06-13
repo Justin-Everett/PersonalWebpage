@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaHome, FaUser } from "react-icons/fa";
+import { FaHome, FaUser, FaGamepad } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 
@@ -182,11 +182,49 @@ function Sidebar() {
                 opacity: "70%",
                 width: "90%",
                 transition: "width 0.3s ease",
+                marginTop: "10px",
+                marginBottom: "20px",
               }}
             ></hr>
           </li>
+          <li
+            style={{
+              ...flexCenter,
+            }}
+          >
+            <button
+              data-tooltip-id="2048-tooltip"
+              data-tooltip-content="2048 Agent"
+              onClick={() => {
+                navigate("/2048_agent");
+                if (isOpen) {
+                  toggleSidebar();
+                }
+              }}
+              style={{
+                ...navButtonStyle,
+                fontWeight:
+                  location.pathname === "/2048_agent" ? "bold" : "normal",
+              }}
+            >
+              <span>{isOpen ? "2048 Agent" : <FaGamepad />}</span>
+            </button>
+            {!isOpen && !isMobile && (
+              <Tooltip
+                id="2048-tooltip"
+                place="right"
+                offset={10}
+                delayShow={20}
+                positionStrategy="fixed"
+                style={{
+                  ...tooltipStyle,
+                }}
+              />
+            )}
+          </li>
         </ul>
       </div>
+      {/*====================END OF SIDEBAR BUTTON LIST====================*/}
       <div
         style={{
           padding: "20px",
