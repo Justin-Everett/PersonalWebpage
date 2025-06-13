@@ -44,6 +44,7 @@ function Sidebar() {
     textOverflow: "ellipsis",
   };
 
+  //styling for navigation icon tooltips
   const tooltipStyle = {
     zIndex: 2000,
     backgroundColor: "#333",
@@ -52,7 +53,6 @@ function Sidebar() {
     padding: "6px 10px",
     fontSize: "14px",
     fontWeight: "bold",
-    opacity: 0.9,
   };
 
   const flexCenter = {
