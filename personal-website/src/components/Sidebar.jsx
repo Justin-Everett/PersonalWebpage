@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaHome, FaUser } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
 
 //collapsible sidebar component to handle intra-website navigation
 function Sidebar() {
@@ -41,6 +42,17 @@ function Sidebar() {
     boxSizing: "border-box",
     width: "90%",
     textOverflow: "ellipsis",
+  };
+
+  const tooltipStyle = {
+    zIndex: 2000,
+    backgroundColor: "#333",
+    color: "#fff",
+    borderRadius: "6px",
+    padding: "6px 10px",
+    fontSize: "14px",
+    fontWeight: "bold",
+    opacity: 0.9,
   };
 
   const flexCenter = {
@@ -99,6 +111,8 @@ function Sidebar() {
             }}
           >
             <button
+              data-tooltip-id="home-tooltip"
+              data-tooltip-content="Home"
               onClick={() => {
                 navigate("/");
                 if (isOpen) toggleSidebar();
@@ -110,6 +124,18 @@ function Sidebar() {
             >
               <span>{isOpen ? "Home" : <FaHome />}</span>
             </button>
+            {!isOpen && (
+              <Tooltip
+                id="home-tooltip"
+                place="right"
+                offset={10}
+                delayShow={20}
+                positionStrategy="fixed"
+                style={{
+                  ...tooltipStyle,
+                }}
+              />
+            )}
           </li>
           <li
             style={{
@@ -117,6 +143,8 @@ function Sidebar() {
             }}
           >
             <button
+              data-tooltip-id="resume-tooltip"
+              data-tooltip-content="Resume/CV"
               onClick={() => {
                 navigate("/resume");
                 if (isOpen) {
@@ -130,6 +158,18 @@ function Sidebar() {
             >
               <span>{isOpen ? "Resume/CV" : <FaUser />}</span>
             </button>
+            {!isOpen && (
+              <Tooltip
+                id="resume-tooltip"
+                place="right"
+                offset={10}
+                delayShow={20}
+                positionStrategy="fixed"
+                style={{
+                  ...tooltipStyle,
+                }}
+              />
+            )}
           </li>
           <li
             style={{
