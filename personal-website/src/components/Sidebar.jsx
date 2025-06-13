@@ -124,7 +124,7 @@ function Sidebar() {
             >
               <span>{isOpen ? "Home" : <FaHome />}</span>
             </button>
-            {!isOpen && (
+            {!isOpen && !isMobile && (
               <Tooltip
                 id="home-tooltip"
                 place="right"
@@ -158,7 +158,7 @@ function Sidebar() {
             >
               <span>{isOpen ? "Resume/CV" : <FaUser />}</span>
             </button>
-            {!isOpen && (
+            {!isOpen && !isMobile && (
               <Tooltip
                 id="resume-tooltip"
                 place="right"
