@@ -39,7 +39,6 @@ function Sidebar() {
     paddingTop: "5px",
     boxSizing: "border-box",
     width: "90%",
-    overflow: "hidden",
     textOverflow: "ellipsis",
   };
 
