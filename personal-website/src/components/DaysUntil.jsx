@@ -21,12 +21,14 @@ function DaysUntil({ targetDateString }) {
       style={{
         display: "flex",
         justifyContent: "center",
+        margin: 0,
       }}
     >
       {daysLeft > 0 ? (
         <p
           style={{
             fontWeight: "bold",
+            margin: 2,
           }}
         >
           {daysLeft} day{daysLeft !== 1 ? "s" : ""} until graduation!

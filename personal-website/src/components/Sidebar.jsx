@@ -25,6 +25,7 @@ function Sidebar() {
   //styling for navigation buttons
   const navButtonStyle = {
     marginBottom: "10px",
+    display: "flex",
     background: "none",
     border: "none",
     color: "#ccc",
@@ -89,7 +90,7 @@ function Sidebar() {
                 marginBottom: "40px",
               }}
             >
-              {isOpen ? "←" : "→"}
+              <span>{isOpen ? "←" : "→"}</span>
             </button>
           </li>
           <li
@@ -107,7 +108,7 @@ function Sidebar() {
                 fontWeight: location.pathname === "/" ? "bold" : "normal",
               }}
             >
-              {isOpen ? "Home" : <FaHome />}
+              <span>{isOpen ? "Home" : <FaHome />}</span>
             </button>
           </li>
           <li
@@ -127,7 +128,7 @@ function Sidebar() {
                 fontWeight: location.pathname === "/resume" ? "bold" : "normal",
               }}
             >
-              {isOpen ? "Resume/CV" : <FaUser />}
+              <span>{isOpen ? "Resume/CV" : <FaUser />}</span>
             </button>
           </li>
           <li
