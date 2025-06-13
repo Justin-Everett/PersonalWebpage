@@ -38,6 +38,14 @@ function Sidebar() {
     paddingBottom: "5px",
     paddingTop: "5px",
     boxSizing: "border-box",
+    width: "90%",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  };
+
+  const flexCenter = {
+    display: "flex",
+    justifyContent: "center",
   };
 
   return (
@@ -48,7 +56,7 @@ function Sidebar() {
           height: "100%",
           background: "#382240",
           color: "#fff",
-          transition: "width 0.3s",
+          transition: "width 0.3s ease",
           overflow: "hidden",
           padding: "10px",
           position: "fixed",
@@ -56,7 +64,7 @@ function Sidebar() {
           zIndex: 1000,
           display: "flex",
           alignItems: "baseline",
-          justifyContent: "center",
+          justifyContent: "flex-start",
         }}
       >
         <ul
@@ -66,24 +74,30 @@ function Sidebar() {
             paddingLeft: 0,
             paddingRight: 0,
             boxSizing: "border-box",
+            width: "100%",
+            transition: "width 0.3s ease",
           }}
         >
-          <li>
+          <li
+            style={{
+              ...flexCenter,
+            }}
+          >
             <button
               onClick={toggleSidebar}
               style={{
                 ...navButtonStyle,
                 marginBottom: "40px",
-                width: isOpen ? "180px" : "100%",
-                maxWidth: "100%",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
               }}
             >
               {isOpen ? "←" : "→"}
             </button>
           </li>
-          <li>
+          <li
+            style={{
+              ...flexCenter,
+            }}
+          >
             <button
               onClick={() => {
                 navigate("/");
@@ -91,17 +105,17 @@ function Sidebar() {
               }}
               style={{
                 ...navButtonStyle,
-                width: isOpen ? "180px" : "100%",
-                maxWidth: "100%",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
                 fontWeight: location.pathname === "/" ? "bold" : "normal",
               }}
             >
               {isOpen ? "Home" : <FaHome />}
             </button>
           </li>
-          <li>
+          <li
+            style={{
+              ...flexCenter,
+            }}
+          >
             <button
               onClick={() => {
                 navigate("/resume");
@@ -111,15 +125,25 @@ function Sidebar() {
               }}
               style={{
                 ...navButtonStyle,
-                width: isOpen ? "180px" : "100%",
-                maxWidth: "100%",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
                 fontWeight: location.pathname === "/resume" ? "bold" : "normal",
               }}
             >
               {isOpen ? "Resume/CV" : <FaUser />}
             </button>
+          </li>
+          <li
+            style={{
+              ...flexCenter,
+            }}
+          >
+            <hr
+              style={{
+                borderTop: "1px solid white",
+                opacity: "70%",
+                width: "90%",
+                transition: "width 0.3s ease",
+              }}
+            ></hr>
           </li>
         </ul>
       </div>
