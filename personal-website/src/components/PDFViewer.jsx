@@ -36,6 +36,7 @@ function PDFViewer() {
       style={{
         display: "flex",
         justifyContent: "center",
+        madWidth: "100%",
       }}
     >
       <Document

@@ -71,14 +71,20 @@ function Home() {
           </span>
         </div>
       </div>
-      <div className="card">
-        <div>
+      <div
+        className="card"
+        style={{
+          flexWrap: "wrap",
+        }}
+      >
+        <div style={{ width: "100%" }}>
           <DaysUntil targetDateString="2025-07-31" />
         </div>
         <p
           style={{
             textAlign: "center",
             margin: 2,
+            width: "100%",
           }}
         >
           <code>Use the sidebar to the left to navigate</code>
@@ -88,6 +94,7 @@ function Home() {
           style={{
             textAlign: "center",
             margin: 5,
+            width: "100%",
           }}
         >
           Click on the image of me to visit my{" "}
