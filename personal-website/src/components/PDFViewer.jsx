@@ -6,7 +6,7 @@ import "react-pdf/dist/esm/Page/TextLayer.css";
 //explicitly tell react where to find worker script
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
 
-function PDFViewer() {
+function PDFViewer({ pdfFilePath }) {
   const [numPages, setNumPages] = useState(null); //keep track of the number of pages in the pdf, provide a method to update number of pages
 
   //check if user is on a mobile device
@@ -40,7 +40,7 @@ function PDFViewer() {
       }}
     >
       <Document
-        file={import.meta.env.BASE_URL + "CV.pdf"}
+        file={import.meta.env.BASE_URL + pdfFilePath}
         onLoadSuccess={onDocumentLoadSuccess}
       >
         {numPages &&

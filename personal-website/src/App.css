@@ -39,3 +39,8 @@ html {
   outline: none;
   box-shadow: 0 0 0 4px #673f75;
 }
+
+.reportButtonThin:hover {
+  outline: none;
+  box-shadow: 0 0 0 2px #673f75;
+}

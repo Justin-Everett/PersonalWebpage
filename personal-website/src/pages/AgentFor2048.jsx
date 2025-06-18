@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 
 function AgentFor2048() {
@@ -5,6 +6,8 @@ function AgentFor2048() {
     /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
+
+  const navigate = useNavigate();
 
   return (
     <div
@@ -183,6 +186,9 @@ function AgentFor2048() {
           <button
             className="reportButton"
             style={{ backgroundColor: "gray", padding: "5px 10px 10px 10px" }}
+            onClick={() => {
+              navigate("/FYP_report");
+            }}
           >
             View Full Project Report
           </button>
