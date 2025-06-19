@@ -48,3 +48,13 @@ html {
 .contents {
   color: lightblue;
 }
+
+.collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.collapsible.open {
+  max-height: 2000px;
+}
