@@ -32,18 +32,107 @@ function AgentFor2048() {
       </h1>
       <div className="aboutMe">
         <div>
-          <img
-            src={
-              isMobile
-                ? `${import.meta.env.BASE_URL}2048mobile.gif`
-                : `${import.meta.env.BASE_URL}2048.gif`
-            }
+          <div
             style={{
-              width: isMobile ? "70%" : "50%",
-              maxWidth: "100%",
-              borderRadius: isMobile ? "10px" : "4px",
+              display: "flex",
+              justifyContent: "center",
             }}
-          ></img>
+          >
+            {!isMobile && (
+              <div
+                style={{
+                  marginRight: "30px",
+                  marginTop: "40px",
+                  width: "240px",
+                }}
+              >
+                <h3>Contents</h3>
+                <ul
+                  style={{
+                    background: "rgba(255, 255, 255, 0.15)",
+                    borderRadius: "20px",
+                    padding: "20px",
+                    paddingLeft: "30px",
+                    textAlign: "left",
+                    listStyle: "none",
+                    display: "grid",
+                    gap: "10px",
+                  }}
+                >
+                  <li>
+                    <a href="#Overview" className="contents">
+                      Overview
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#Learned" className="contents">
+                      What I Learned
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#ControlFlow" className="contents">
+                      Agent Control Flow
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#Expectimax" className="contents">
+                      Expectimax Component
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#ComputerVision" className="contents">
+                      Computer Vision
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            )}
+            <img
+              src={
+                isMobile
+                  ? `${import.meta.env.BASE_URL}2048mobile.gif`
+                  : `${import.meta.env.BASE_URL}2048.gif`
+              }
+              style={{
+                width: isMobile ? "70%" : "50%",
+                maxWidth: "100%",
+                borderRadius: isMobile ? "10px" : "4px",
+              }}
+            ></img>
+            {!isMobile && (
+              <div
+                style={{
+                  marginLeft: "30px",
+                  marginTop: "40px",
+                  width: "240px",
+                }}
+              >
+                <h3>Important Skills</h3>
+                <ul
+                  style={{
+                    background: "rgba(255, 255, 255, 0.15)",
+                    borderRadius: "20px",
+                    padding: "20px",
+                    textAlign: "right",
+                    listStyle: "none",
+                    fontWeight: "bold",
+                    display: "grid",
+                    gap: "10px",
+                  }}
+                >
+                  <li>Python</li>
+                  <li style={{ textWrap: "nowrap" }}>Selenium/Web Scraping</li>
+                  <li>OpenCV</li>
+                  <li>Artificial Intelligence</li>
+                  <li>Computer Vision</li>
+                  <li>Large Project Planning</li>
+                  <li style={{ textWrap: "nowrap" }}>
+                    Technical Documentation
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
           <hr style={{ marginBottom: 0 }}></hr>
           <code>
             Agent playing <i>2048</i> autonomously
@@ -66,7 +155,7 @@ function AgentFor2048() {
             padding: "0 20px 20px 20px",
           }}
         >
-          <h3>Project Overview</h3>
+          <h3 id="Overview">Project Overview</h3>
           <p className="paragraph">
             For my final year project (dissertation equivalent) for my computer
             science BSc at Royal Holloway, I constructed an autonomous agent to
@@ -84,7 +173,7 @@ function AgentFor2048() {
             algorithm, and utilizes computer vision to visually reconstruct the
             game board from the website.
           </p>
-          <h3>What This Project Taught Me</h3>
+          <h3 id="Learned">What This Project Taught Me</h3>
           <p className="paragraph" style={{ marginBottom: 0 }}>
             Throughout the development of this project, I learned a ton of new
             concepts and technologies, alongside enriching my knowledge of
