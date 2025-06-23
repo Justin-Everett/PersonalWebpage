@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaHome, FaUser, FaGamepad } from "react-icons/fa";
+import { FaHome, FaUser, FaGamepad, FaGhost } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 
@@ -212,6 +212,40 @@ function Sidebar() {
             {!isOpen && !isMobile && (
               <Tooltip
                 id="2048-tooltip"
+                place="right"
+                offset={10}
+                delayShow={20}
+                positionStrategy="fixed"
+                style={{
+                  ...tooltipStyle,
+                }}
+              />
+            )}
+          </li>
+          <li
+            style={{
+              ...flexCenter,
+            }}
+          >
+            <button
+              data-tooltip-id="pacman-tooltip"
+              data-tooltip-content="PacMan"
+              onClick={() => {
+                navigate("/pacman");
+                if (isOpen) {
+                  toggleSidebar();
+                }
+              }}
+              style={{
+                ...navButtonStyle,
+                fontWeight: location.pathname === "/pacman" ? "bold" : "normal",
+              }}
+            >
+              <span>{isOpen ? "PacMan Project" : <FaGhost />}</span>
+            </button>
+            {!isOpen && !isMobile && (
+              <Tooltip
+                id="pacman-tooltip"
                 place="right"
                 offset={10}
                 delayShow={20}
