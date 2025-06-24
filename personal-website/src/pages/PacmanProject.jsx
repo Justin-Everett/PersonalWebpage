@@ -97,7 +97,12 @@ function PacmanProject() {
                 </ul>
               </div>
             )}
-
+            <img
+              src={`${import.meta.env.BASE_URL}Pacman.gif`}
+              style={{
+                width: "100%",
+              }}
+            ></img>
             {!isMobile && (
               <div
                 style={{
