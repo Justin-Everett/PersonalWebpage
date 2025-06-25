@@ -37,7 +37,7 @@ function PacmanProject() {
       >
         Project:{" "}
         <a href="https://github.com/Justin-Everett/pacman-project" style={{}}>
-          Recreating Pacman
+          Recreating PacMan
         </a>
       </h1>
       <div className="aboutMe">
@@ -52,7 +52,6 @@ function PacmanProject() {
               <div
                 style={{
                   marginRight: "30px",
-                  marginTop: "40px",
                   width: "240px",
                 }}
               >
@@ -62,11 +61,11 @@ function PacmanProject() {
                     background: "rgba(255, 255, 255, 0.15)",
                     borderRadius: "20px",
                     padding: "20px",
-                    paddingLeft: "30px",
                     textAlign: "left",
                     listStyle: "none",
                     display: "grid",
                     gap: "10px",
+                    maxWidth: "100%",
                   }}
                 >
                   <li>
@@ -80,34 +79,43 @@ function PacmanProject() {
                     </a>
                   </li>
                   <li>
-                    <a href="#ControlFlow" className="contents">
-                      Agent Control Flow
+                    <a href="#Graphics" className="contents">
+                      Graphics
                     </a>
                   </li>
                   <li>
-                    <a href="#Expectimax" className="contents">
-                      Expectimax Component
+                    <a href="#Pacman" className="contents">
+                      PacMan Movement
                     </a>
                   </li>
                   <li>
-                    <a href="#ComputerVision" className="contents">
-                      Computer Vision
+                    <a href="#Ghost" className="contents">
+                      Ghost Pathfinding
                     </a>
                   </li>
                 </ul>
               </div>
             )}
-            <img
-              src={`${import.meta.env.BASE_URL}Pacman.gif`}
+            <div
               style={{
-                width: "100%",
+                aspectRatio: "71/40",
+                flex: 1,
+                maxWidth: "calc(100% - 540px)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                minWidth: isMobile ? "80vw" : "40vw",
               }}
-            ></img>
+            >
+              <img
+                src={`${import.meta.env.BASE_URL}Pacman.gif`}
+                style={{ maxWidth: "100%", maxHeight: "100%", width: "100%" }}
+              ></img>
+            </div>
             {!isMobile && (
               <div
                 style={{
                   marginLeft: "30px",
-                  marginTop: "40px",
                   width: "240px",
                 }}
               >
@@ -119,20 +127,17 @@ function PacmanProject() {
                     padding: "20px",
                     textAlign: "right",
                     listStyle: "none",
-                    fontWeight: "bold",
                     display: "grid",
                     gap: "10px",
+                    maxWidth: "100%",
+                    fontWeight: "bold",
                   }}
                 >
-                  <li>Python</li>
-                  <li style={{ textWrap: "nowrap" }}>Selenium/Web Scraping</li>
-                  <li>OpenCV</li>
-                  <li>Artificial Intelligence</li>
-                  <li>Computer Vision</li>
-                  <li>Large Project Planning</li>
-                  <li style={{ textWrap: "nowrap" }}>
-                    Technical Documentation
-                  </li>
+                  <li style={{ textWrap: "nowrap" }}>Java</li>
+                  <li style={{ textWrap: "nowrap" }}>Game Design</li>
+                  <li style={{ textWrap: "nowrap" }}>Project Planning</li>
+                  <li style={{ textWrap: "nowrap" }}>AI Pathfinding</li>
+                  <li style={{ textWrap: "nowrap" }}>Event Handling</li>
                 </ul>
               </div>
             )}
