@@ -241,7 +241,7 @@ function Sidebar() {
                 fontWeight: location.pathname === "/pacman" ? "bold" : "normal",
               }}
             >
-              <span>{isOpen ? "PacMan Project" : <FaGhost />}</span>
+              <span>{isOpen ? "Pac-Man Project" : <FaGhost />}</span>
             </button>
             {!isOpen && !isMobile && (
               <Tooltip
