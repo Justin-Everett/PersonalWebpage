@@ -49,7 +49,8 @@ function Home() {
             American living in London with right to work in the UK. I love
             learning new things, especially around technology and personal
             development. Recently completed my BSc in Computer Science at Royal
-            Holloway, graduating this July.
+            Holloway, graduating this July with a First Class Honours
+            classification.
           </span>
           <hr></hr>
           <span>
@@ -63,10 +64,11 @@ function Home() {
           <hr></hr>
           <span>
             Outside of work, I am passionate about music and will often ask for
-            recommendations on the best album of all time. I am active in team
-            sports, participating in the Royal Holloway Ultimate Frisbee
-            community. I also value the time spent with loved ones, as moving
-            across the world has underscored the importance of family and close
+            opinions on the best album of all time. I am active in team and
+            individual sports, participating in the Royal Holloway Ultimate
+            Frisbee community as well as frequently rock climbing for leisure. I
+            also value the time spent with loved ones, as moving across the
+            world has underscored the importance of family and close
             relationships.
           </span>
         </div>
