@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { FaHome, FaUser, FaGamepad, FaGhost } from "react-icons/fa";
+import {
+  FaHome,
+  FaUser,
+  FaGamepad,
+  FaGhost,
+  FaCalculator,
+} from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 
@@ -246,6 +252,41 @@ function Sidebar() {
             {!isOpen && !isMobile && (
               <Tooltip
                 id="pacman-tooltip"
+                place="right"
+                offset={10}
+                delayShow={20}
+                positionStrategy="fixed"
+                style={{
+                  ...tooltipStyle,
+                }}
+              />
+            )}
+          </li>
+          <li
+            style={{
+              ...flexCenter,
+            }}
+          >
+            <button
+              data-tooltip-id="extendedessay-tooltip"
+              data-tooltip-content="IB Extended Essay"
+              onClick={() => {
+                navigate("/extendedessay");
+                if (isOpen) {
+                  toggleSidebar();
+                }
+              }}
+              style={{
+                ...navButtonStyle,
+                fontWeight:
+                  location.pathname === "/extendedessay" ? "bold" : "normal",
+              }}
+            >
+              <span>{isOpen ? "IB Extended Essay" : <FaCalculator />}</span>
+            </button>
+            {!isOpen && !isMobile && (
+              <Tooltip
+                id="extendedessay-tooltip"
                 place="right"
                 offset={10}
                 delayShow={20}

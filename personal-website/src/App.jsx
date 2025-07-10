@@ -4,8 +4,9 @@ import Home from "./pages/Home";
 import Resume from "./pages/Resume";
 import AgentFor2048 from "./pages/AgentFor2048";
 import FYP_Report from "./pages/FYP_Report";
-import "./App.css";
 import PacmanProject from "./pages/PacmanProject";
+import ExtendedEssay from "./pages/ExtendedEssay";
+import "./App.css";
 
 //make routing for page navigation
 function App({ basename }) {
@@ -18,6 +19,7 @@ function App({ basename }) {
           <Route path="2048_agent" element={<AgentFor2048 />} />
           <Route path="FYP_report" element={<FYP_Report />} />
           <Route path="pacman" element={<PacmanProject />} />
+          <Route path="extendedessay" element={<ExtendedEssay />} />
         </Route>
       </Routes>
     </Router>
