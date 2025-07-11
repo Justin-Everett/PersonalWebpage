@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import PDFViewer from "../components/PDFViewer";
 import "../App.css";
 
 function ExtendedEssay() {
@@ -36,7 +37,7 @@ function ExtendedEssay() {
           maxWidth: isMobile ? "90%" : "100%",
         }}
       >
-        Project: IB Extended Essay
+        Project: IB Extended Essay - Transistor Heat Modelling
       </h1>
       <div className="aboutMe">
         <div>
@@ -78,17 +79,17 @@ function ExtendedEssay() {
                   </li>
                   <li>
                     <a href="#Graphics" className="contents">
-                      Graphics
+                      Final Report
                     </a>
                   </li>
                   <li>
                     <a href="#Pacman" className="contents">
-                      Pac-Man Movement
+                      Problem Statement
                     </a>
                   </li>
                   <li>
                     <a href="#Ghost" className="contents">
-                      Ghost Pathfinding
+                      Findings
                     </a>
                   </li>
                 </ul>
@@ -102,19 +103,8 @@ function ExtendedEssay() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                minWidth: isMobile ? "80vw" : "40vw",
               }}
-            >
-              <img
-                src={`${import.meta.env.BASE_URL}Pacman.gif`}
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "100%",
-                  width: "100%",
-                  borderRadius: isMobile ? "10px" : "4px",
-                }}
-              ></img>
-            </div>
+            ></div>
             {!isMobile && (
               <div
                 style={{
@@ -136,11 +126,10 @@ function ExtendedEssay() {
                     fontWeight: "bold",
                   }}
                 >
-                  <li style={{ textWrap: "nowrap" }}>Java</li>
-                  <li style={{ textWrap: "nowrap" }}>Game Design</li>
-                  <li style={{ textWrap: "nowrap" }}>Project Planning</li>
-                  <li style={{ textWrap: "nowrap" }}>AI Pathfinding</li>
-                  <li style={{ textWrap: "nowrap" }}>Event Handling</li>
+                  <li style={{ textWrap: "nowrap" }}>Research</li>
+                  <li style={{ textWrap: "nowrap" }}>Report Writing</li>
+                  <li style={{ textWrap: "nowrap" }}>Math Skills</li>
+                  <li style={{ textWrap: "nowrap" }}>Integral Calculus</li>
                 </ul>
               </div>
             )}
@@ -186,7 +175,13 @@ function ExtendedEssay() {
                 isMobile ? `collapsible ${isOverviewOpen ? "open" : ""}` : ""
               }
             >
-              <p className="paragraph">Placeholder</p>
+              <p className="paragraph">
+                Placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+              </p>
             </div>
           </div>
 
@@ -205,26 +200,44 @@ function ExtendedEssay() {
               }
             >
               <p className="paragraph" style={{ marginBottom: 0 }}>
-                Placeholder
+                Placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
               </p>
             </div>
           </div>
 
           <div id="Graphics">
-            <h3 onClick={() => setIsGraphicsOpen(!isGraphicsOpen)}>
-              {isMobile && (
-                <span style={{ marginRight: "10px" }}>
-                  {isGraphicsOpen ? "▼" : "▷"}
-                </span>
+            {!isMobile && <h3>Project Report</h3>}
+            <div>
+              {!isMobile && (
+                <div
+                  style={{
+                    overflowY: "auto",
+                    marginTop: "10px",
+                    height: "100vh",
+                  }}
+                >
+                  <PDFViewer pdfFilePath={"Transistor Heat Modelling.pdf"} />
+                </div>
               )}
-              Graphics
-            </h3>
-            <div
-              className={
-                isMobile ? `collapsible ${isGraphicsOpen ? "open" : ""}` : ""
-              }
-            >
-              <p className="paragraph">Placeholder</p>
+              {isMobile && (
+                <button
+                  className="reportButton"
+                  style={{
+                    backgroundColor: "gray",
+                    padding: "5px 10px 10px 10px",
+                    marginTop: "10px",
+                  }}
+                  onClick={() => {
+                    navigate("/EE_report");
+                  }}
+                >
+                  View Full Project Report
+                </button>
+              )}
             </div>
           </div>
           <div id="Pacman">
@@ -234,14 +247,20 @@ function ExtendedEssay() {
                   {isPacmanOpen ? "▼" : "▷"}
                 </span>
               )}
-              Pac-Man Movement
+              Problem Statement
             </h3>
             <div
               className={
                 isMobile ? `collapsible ${isPacmanOpen ? "open" : ""}` : ""
               }
             >
-              <p className="paragraph">Placeholder</p>
+              <p className="paragraph">
+                Placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+              </p>
             </div>
           </div>
           <div id="Ghost">
@@ -251,14 +270,20 @@ function ExtendedEssay() {
                   {isGhostOpen ? "▼" : "▷"}
                 </span>
               )}
-              Ghost Pathfinding
+              Findings
             </h3>
             <div
               className={
                 isMobile ? `collapsible ${isGhostOpen ? "open" : ""}` : ""
               }
             >
-              <p className="paragraph">Placeholder</p>
+              <p className="paragraph">
+                Placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+                placeholder placeholder placeholder placeholder placeholder
+              </p>
             </div>
           </div>
         </div>
