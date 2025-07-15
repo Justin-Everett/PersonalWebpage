@@ -35,7 +35,10 @@ function ExtendedEssay() {
           maxWidth: isMobile ? "90%" : "100%",
         }}
       >
-        Project: IB Extended Essay - Transistor Heat Modelling
+        Project:{" "}
+        {!isMobile
+          ? "IB Extended Essay - Transistor Heat Modelling"
+          : "Transistor Heat Modelling"}
       </h1>
       <div className="aboutMe">
         <div>
@@ -43,7 +46,7 @@ function ExtendedEssay() {
             style={{
               display: "flex",
               justifyContent: "center",
-              width: "65vw",
+              width: isMobile ? "80vw" : "65vw",
             }}
           >
             {!isMobile && (
@@ -96,6 +99,17 @@ function ExtendedEssay() {
                       </a>
                     </li>
                   </ul>
+                  <img
+                    src={`${import.meta.env.BASE_URL}Math.png`}
+                    style={{
+                      height: "auto",
+                      width: "auto",
+                      maxWidth: "100%",
+                      objectFit: "contain",
+                      alignSelf: "center",
+                      borderRadius: "20px",
+                    }}
+                  ></img>
                   <ul
                     style={{
                       listStyle: "none",
@@ -116,6 +130,19 @@ function ExtendedEssay() {
                   </ul>
                 </div>
               </div>
+            )}
+            {isMobile && (
+              <img
+                src={`${import.meta.env.BASE_URL}Math.png`}
+                style={{
+                  height: "auto",
+                  width: "auto",
+                  maxWidth: "100%",
+                  objectFit: "contain",
+                  alignSelf: "center",
+                  borderRadius: "20px",
+                }}
+              ></img>
             )}
           </div>
           <hr style={{ marginBottom: 0 }}></hr>
