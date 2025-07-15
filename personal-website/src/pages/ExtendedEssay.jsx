@@ -16,11 +16,9 @@ function ExtendedEssay() {
 
   const [isLearnedOpen, setIsLearnedOpen] = useState(false);
 
-  const [isGraphicsOpen, setIsGraphicsOpen] = useState(false);
+  const [isProblemOpen, setIsProblemOpen] = useState(false);
 
-  const [isPacmanOpen, setIsPacmanOpen] = useState(false);
-
-  const [isGhostOpen, setIsGhostOpen] = useState(false);
+  const [isFindingsOpen, setIsFindingsOpen] = useState(false);
 
   return (
     <div
@@ -45,92 +43,78 @@ function ExtendedEssay() {
             style={{
               display: "flex",
               justifyContent: "center",
+              width: "65vw",
             }}
           >
             {!isMobile && (
-              <div
-                style={{
-                  marginRight: "30px",
-                  width: "240px",
-                }}
-              >
-                <h3>Contents</h3>
-                <ul
+              <div style={{ width: "100%" }}>
+                <h3>Contents & Important Skills</h3>
+                <div
                   style={{
+                    display: "flex",
+                    justifyContent: "space-between",
                     background: "rgba(255, 255, 255, 0.15)",
                     borderRadius: "20px",
                     padding: "20px",
-                    textAlign: "left",
-                    listStyle: "none",
-                    display: "grid",
-                    gap: "10px",
                     maxWidth: "100%",
+                    gap: "40px",
                   }}
                 >
-                  <li>
-                    <a href="#Overview" className="contents">
-                      Overview
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#Learned" className="contents">
-                      What I Learned
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#Graphics" className="contents">
-                      Final Report
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#Pacman" className="contents">
-                      Problem Statement
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#Ghost" className="contents">
-                      Findings
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            )}
-            <div
-              style={{
-                aspectRatio: "71/40",
-                flex: 1,
-                maxWidth: "calc(100% - 540px)",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            ></div>
-            {!isMobile && (
-              <div
-                style={{
-                  marginLeft: "30px",
-                  width: "240px",
-                }}
-              >
-                <h3>Important Skills</h3>
-                <ul
-                  style={{
-                    background: "rgba(255, 255, 255, 0.15)",
-                    borderRadius: "20px",
-                    padding: "20px",
-                    textAlign: "right",
-                    listStyle: "none",
-                    display: "grid",
-                    gap: "10px",
-                    maxWidth: "100%",
-                    fontWeight: "bold",
-                  }}
-                >
-                  <li style={{ textWrap: "nowrap" }}>Research</li>
-                  <li style={{ textWrap: "nowrap" }}>Report Writing</li>
-                  <li style={{ textWrap: "nowrap" }}>Math Skills</li>
-                  <li style={{ textWrap: "nowrap" }}>Integral Calculus</li>
-                </ul>
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      textAlign: "left",
+                      display: "grid",
+                      gap: "10px",
+                      margin: 0,
+                      padding: 0,
+                    }}
+                  >
+                    <li>
+                      <a href="#Overview" className="contents">
+                        Overview
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#Learned" className="contents">
+                        What I Learned
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#Report" className="contents">
+                        Final Report
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#Problem" className="contents">
+                        Problem Statement
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#Findings" className="contents">
+                        Findings
+                      </a>
+                    </li>
+                  </ul>
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      textAlign: "right",
+                      display: "grid",
+                      gap: "10px",
+                      fontWeight: "bold",
+                      margin: 0,
+                      padding: 0,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    <li>Research</li>
+                    <li>Report Writing</li>
+                    <li>Math Skills</li>
+                    <li>Integral Calculus</li>
+                    <li>Self-Directed Learning</li>
+                  </ul>
+                </div>
               </div>
             )}
           </div>
@@ -176,15 +160,17 @@ function ExtendedEssay() {
               }
             >
               <p className="paragraph">
-                Placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
+                This project was made as part of my IB (International
+                Baccalaureate) education, as my submission for the program's
+                "Extended Essay" (EE). The premise of this essay is a ~4000 word
+                deep dive essay into a topic of the student's choosing, so long
+                as it falls under the bracket of one of their studied subjects.
+                I chose to do my EE in Math and in an attempt to unite it with
+                my interest of computer science, I used the heat equation in 1
+                dimension to model how heat flows in a transistor.
               </p>
             </div>
           </div>
-
           <div id="Learned">
             <h3 onClick={() => setIsLearnedOpen(!isLearnedOpen)}>
               {isMobile && (
@@ -200,16 +186,32 @@ function ExtendedEssay() {
               }
             >
               <p className="paragraph" style={{ marginBottom: 0 }}>
-                Placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
+                At the time of working on this essay, the extent of my math
+                capabilities was intermediate trigonometry and (maybe) some
+                basic calculus. This project took me far outside of my comfort
+                zone, requiring me to teach myself much more advanced topics
+                from the ground up, such as differential equations, partial
+                differential equations, and fourier tranforms. As a result, not
+                only did I learn a lot of math which was much more advanced than
+                the IB higher level maths courses offer (which resulted in my
+                university maths courses feeling quite straighforward), I
+                learned a lot about how I learn topics and how to teach myself
+                topics without the aid of an educator, which has and will
+                continue to be an extremely valuable skill for me to rely on.
+                This project also taught me some of the basics of how to write a
+                maths-based academic paper, a skill which I used to streamline
+                my{" "}
+                <a
+                  onClick={() => navigate("/2048_agent")}
+                  style={{ cursor: "pointer", color: "lightblue" }}
+                >
+                  final year project
+                </a>{" "}
+                in university.
               </p>
             </div>
           </div>
-
-          <div id="Graphics">
+          <div id="Report">
             {!isMobile && <h3>Project Report</h3>}
             <div>
               {!isMobile && (
@@ -240,49 +242,80 @@ function ExtendedEssay() {
               )}
             </div>
           </div>
-          <div id="Pacman">
-            <h3 onClick={() => setIsPacmanOpen(!isPacmanOpen)}>
+          <div id="Problem">
+            <h3 onClick={() => setIsProblemOpen(!isProblemOpen)}>
               {isMobile && (
                 <span style={{ marginRight: "10px" }}>
-                  {isPacmanOpen ? "▼" : "▷"}
+                  {isProblemOpen ? "▼" : "▷"}
                 </span>
               )}
               Problem Statement
             </h3>
             <div
               className={
-                isMobile ? `collapsible ${isPacmanOpen ? "open" : ""}` : ""
+                isMobile ? `collapsible ${isProblemOpen ? "open" : ""}` : ""
               }
             >
               <p className="paragraph">
-                Placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
+                Upon some basic research that yielded that some transistors can
+                achieve a worst-case maximum operating temperature of 134
+                degrees C, along with the assumption that if this transistor is
+                cooled to under this temperature within 1 second it will not be
+                permanently damaged, the problem statement for this essay is as
+                follows:
+              </p>
+              <p style={{ fontWeight: "bold", textAlign: "center" }}>
+                What is the maximum temperature a transistor can reach before it
+                can be cooled under 134 degrees C within 1 second?
               </p>
             </div>
           </div>
-          <div id="Ghost">
-            <h3 onClick={() => setIsGhostOpen(!isGhostOpen)}>
+          <div id="Findings">
+            <h3 onClick={() => setIsFindingsOpen(!isFindingsOpen)}>
               {isMobile && (
                 <span style={{ marginRight: "10px" }}>
-                  {isGhostOpen ? "▼" : "▷"}
+                  {isFindingsOpen ? "▼" : "▷"}
                 </span>
               )}
               Findings
             </h3>
             <div
               className={
-                isMobile ? `collapsible ${isGhostOpen ? "open" : ""}` : ""
+                isMobile ? `collapsible ${isFindingsOpen ? "open" : ""}` : ""
               }
             >
               <p className="paragraph">
-                Placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
-                placeholder placeholder placeholder placeholder placeholder
+                After solving both the general case for the 1 dimensional heat
+                equation, then the case specific to the{" "}
+                <a
+                  href="#Problem"
+                  style={{ color: "lightblue" }}
+                  onClick={() => setIsProblemOpen(true)}
+                >
+                  problem statement
+                </a>
+                , the temperature that a transistor can be cooled under 134
+                degrees C within 1 second is found to be <b>147.9</b> degrees C.
+              </p>
+              <p className="paragraph">
+                It is important to note, however, that this result follows from
+                some pretty heavy assumptions. Most obviously, this is found
+                using the 1 dimensional heat equation, and effectively models
+                for heat in a finite length infinitessamly thin bar. This is not
+                ideal for modelling transistor heat, as it is clear that
+                transistors exist in 3 dimensions rather than 1, however the
+                mathematical complexity of the 1 dimensional heat equation was
+                already both complicated enough to be appropriate for an EE and
+                taking non-negligible time over my summer to learn, so the 2 and
+                3 dimensional versions of the equation were deemed to be out of
+                the scope of this essay. Some other important assumptions, whose
+                reasoning can be found in the{" "}
+                <a href="#Report" style={{ color: "lightblue" }}>
+                  final essay document
+                </a>
+                , include both ends of the 1 dimensional transistor being held
+                at 0 degrees celsius throughout the simulation, as well as the
+                material properties of the transistor being pure silicon.
               </p>
             </div>
           </div>
