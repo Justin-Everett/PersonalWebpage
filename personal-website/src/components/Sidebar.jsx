@@ -5,6 +5,7 @@ import {
   FaGamepad,
   FaGhost,
   FaCalculator,
+  FaBriefcaseMedical,
 } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
@@ -283,6 +284,41 @@ function Sidebar() {
               }}
             >
               <span>{isOpen ? "IB Extended Essay" : <FaCalculator />}</span>
+            </button>
+            {!isOpen && !isMobile && (
+              <Tooltip
+                id="extendedessay-tooltip"
+                place="right"
+                offset={10}
+                delayShow={20}
+                positionStrategy="fixed"
+                style={{
+                  ...tooltipStyle,
+                }}
+              />
+            )}
+          </li>
+          <li
+            style={{
+              ...flexCenter,
+            }}
+          >
+            <button
+              data-tooltip-id="hackathon-tooltip"
+              data-tooltip-content="Tempus Cura"
+              onClick={() => {
+                navigate("/tempuscura");
+                if (isOpen) {
+                  toggleSidebar();
+                }
+              }}
+              style={{
+                ...navButtonStyle,
+                fontWeight:
+                  location.pathname === "/tempuscura" ? "bold" : "normal",
+              }}
+            >
+              <span>{isOpen ? "Tempus Cura" : <FaBriefcaseMedical />}</span>
             </button>
             {!isOpen && !isMobile && (
               <Tooltip

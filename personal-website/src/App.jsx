@@ -7,6 +7,7 @@ import FYP_Report from "./pages/FYP_Report";
 import PacmanProject from "./pages/PacmanProject";
 import ExtendedEssay from "./pages/ExtendedEssay";
 import EE_Report from "./pages/EE_Report";
+import Tempus_Cura from "./pages/Tempus_Cura";
 import "./App.css";
 
 //make routing for page navigation
@@ -22,6 +23,7 @@ function App({ basename }) {
           <Route path="pacman" element={<PacmanProject />} />
           <Route path="extendedessay" element={<ExtendedEssay />} />
           <Route path="EE_report" element={<EE_Report />} />
+          <Route path="tempuscura" element={<Tempus_Cura />} />
         </Route>
       </Routes>
     </Router>
